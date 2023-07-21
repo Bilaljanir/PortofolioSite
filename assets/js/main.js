@@ -1,8 +1,5 @@
-
 !(function($) {
     "use strict";
-
-    // Hero typed
     if ($('.typed').length) {
         var typed_strings = $(".typed").data('typed-items');
         typed_strings = typed_strings.split(',')
@@ -15,7 +12,6 @@
         });
     }
 
-    // Init AOS
     function aos_init() {
         AOS.init({
             duration: 1000,
