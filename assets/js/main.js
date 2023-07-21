@@ -23,4 +23,26 @@
         aos_init();
     });
 
+    // Compétence
+    $(window).on('load', function() {
+        $('.progress .progress-bar').each(function() {
+            $(this).css("width", $(this).attr("aria-valuenow") + '%');
+        });
+    });
+
+    // Compétence
+    $(document).ready(function() {
+        $('.skills-content').addClass('loaded');
+    });
+
+    $('.skills-content.loaded').waypoint(function() {
+        $('.progress .progress-bar').each(function() {
+            $(this).css("width", $(this).attr("aria-valuenow") + '%');
+        });
+    }, {
+        offset: '80%'
+    });
+
+
+
 })(jQuery);
