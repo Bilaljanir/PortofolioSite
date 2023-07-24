@@ -541,3 +541,38 @@ section {
     opacity: 1;
     bottom: 0;
 }
+h3{
+margin-top: 10px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.tag-html {
+    background-color: #FF5722;}
+
+.tag-css {
+    background-color: #2196F3;
+}
+.tag-php {
+    background-color: #dc3545;}
+
+.tag-laravel {
+    background-color: #34ce57;
+}
