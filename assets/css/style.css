@@ -623,3 +623,49 @@ margin-top: 10px;
     font-size: 13px;
     color: #eaebf0;
 }
+#interets {
+    padding: 80px 0;
+    background-color: #f7f7f7;
+}
+
+#interets .icon-box {
+    text-align: center;
+    padding: 30px;
+    transition: ease-in-out 0.3s;
+}
+
+#interets .icon-box .icon {
+    margin-bottom: 20px;
+}
+
+#interets .icon-box .icon i {
+    font-size: 48px;
+    line-height: 1;
+    background: #f15a24;
+    padding: 18px;
+    border-radius: 50%;
+    color: #fff;
+}
+
+#interets .icon-box h4 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#interets .icon-box p {
+    line-height: 24px;
+    font-size: 14px;
+    color: #777;
+}
+
+#interets .icon-box:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    #interets .icon-box {
+        margin-bottom: 30px;
+    }
+}
