@@ -12,6 +12,50 @@
         });
     }
 
+    $(document).ready(function() {
+        if (window.location.hash) {
+            var initial_nav = window.location.hash;
+            if ($(initial_nav).length) {
+                var scrollto = $(initial_nav).offset().top;
+                $('html, body').animate({
+                    scrollTop: scrollto
+                }, 1500, 'easeInOutExpo');
+            }
+        }
+    });
+
+    // Navigation scrol
+    var nav_sections = $('section');
+    var main_nav = $('.nav-menu, .mobile-nav');
+
+    $(window).on('scroll', function() {
+        var cur_pos = $(this).scrollTop() + 200;
+
+        nav_sections.each(function() {
+            var top = $(this).offset().top,
+                bottom = top + $(this).outerHeight();
+
+            if (cur_pos >= top && cur_pos <= bottom) {
+                if (cur_pos <= bottom) {
+                    main_nav.find('li').removeClass('active');
+                }
+                main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
+            }
+            if (cur_pos < 300) {
+                $(".nav-menu ul:first li:first").addClass('active');
+            }
+        });
+    });
+
+
+    // back to top button
+    $('.back-to-top').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 1500, 'easeInOutExpo');
+        return false;
+    });
+
     function aos_init() {
         AOS.init({
             duration: 1000,
