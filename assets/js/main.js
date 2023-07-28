@@ -12,6 +12,7 @@
         });
     }
 
+
     $(document).ready(function() {
         if (window.location.hash) {
             var initial_nav = window.location.hash;
@@ -22,6 +23,11 @@
                 }, 1500, 'easeInOutExpo');
             }
         }
+    });
+
+    $(document).on('click', '.mobile-nav-toggle', function(e) {
+        $('body').toggleClass('mobile-nav-active');
+        $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
     });
 
     // Navigation scrol
