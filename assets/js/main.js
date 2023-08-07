@@ -53,7 +53,6 @@
         });
     });
 
-
     // back to top button
     $('.back-to-top').click(function() {
         $('html, body').animate({
