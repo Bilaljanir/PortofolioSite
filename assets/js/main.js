@@ -30,6 +30,38 @@
         $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
     });
 
+    function initSkillsAnimations() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const tags = entry.target.querySelectorAll('.skill-tag');
+                    tags.forEach((tag, index) => {
+                        setTimeout(() => {
+                            tag.style.transform = 'scale(1)';
+                            tag.style.opacity = '1';
+                        }, index * 100);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.skill-item').forEach(item => {
+            const tags = item.querySelectorAll('.skill-tag');
+            tags.forEach(tag => {
+                tag.style.transform = 'scale(0.8)';
+                tag.style.opacity = '0';
+                tag.style.transition = 'all 0.3s ease';
+            });
+
+            observer.observe(item);
+        });
+    }
+
+// Lancer les animations quand le DOM est chargé
+    $(document).ready(function() {
+        setTimeout(initSkillsAnimations, 500);
+    });
     // Navigation scrol
     var nav_sections = $('section');
     var main_nav = $('.nav-menu, .mobile-nav');
